@@ -13,28 +13,28 @@ grep "contract_hold" -ir --exclude=*.log . | mate
 grep -v "%20" relational_messages.txt > r1.txt       (To exlude all lines with string '%20')
 
 # heroku 
-heroku run console    		  --app ms2-staging
-heroku run console    		  --app ms2-staging --sandbox
-heroku console        		  --app tourbuilder-staging
-heroku rake db:version      --app ms2-sandbox
-heroku run rake db:migrate  --app ms2-sandbox
-heroku run ls db/migrate    --app ms2-prod
+heroku run console            --app ms2-staging
+heroku run console            --app ms2-staging --sandbox
+heroku console                --app tourbuilder-staging
+heroku rake db:version        --app ms2-sandbox
+heroku run rake db:migrate    --app ms2-sandbox
+heroku run ls db/migrate      --app ms2-prod
 heroku run cat app/models/cmsasset.rb --app ms2-sandbox
 
-heroku logs --tail      --app ms2-staging
-heroku logs -n 1000     --app ms2-prod
-heroku logs         		--app ms2-sandbox | grep 'UPDATE'
-heroku logs --tail  		--app ms2-sandbox | grep 'UPDATE "contexts"'
-heroku logs --tail  		--app ms2-sandbox > heroku-2.log
+heroku logs --tail            --app ms2-staging
+heroku logs -n 1000           --app ms2-prod
+heroku logs                   --app ms2-sandbox | grep 'UPDATE'
+heroku logs --tail            --app ms2-sandbox | grep 'UPDATE "contexts"'
+heroku logs --tail            --app ms2-sandbox > heroku-2.log
 
 heroku pgbackups                   --app tourbuilder (To list backups)
 heroku pgbackups:capture           --app tourbuilder (To create a backup)
 heroku pgbackups:capture  --expire --app tourbuilder (To delete oldest backup and create new backup)
 heroku db:pull                     --app tourbuilder (To pull database, from app root)
 
-heroku restart            	--app ms2-sandbox
-heroku ps                 	--app ms2-sandbox
-heroku ps:stop run.3      	--app ms2-sandbox
+heroku restart                --app ms2-sandbox
+heroku ps                     --app ms2-sandbox
+heroku ps:stop run.3          --app ms2-sandbox
 
 # Git Setup
 git init
