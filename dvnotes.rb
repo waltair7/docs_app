@@ -38,14 +38,40 @@ heroku ps:stop run.3          --app ms2-sandbox
 
 # Git Setup
 git init
-git add .       (add all files under the current directory to the project, including untracked files)
-git add -u      (Update all tracked files in the current directory and its subdirectories)
+git add .             (add all files under the current directory to the project, including untracked files)
+git add -u            (Update all tracked files in the current directory and its subdirectories)
+git add -p            (add patches)
 git commit -m "first commit"
+
 git log
+git log --stat        (includes summary of what files changed)
+git log --graph
+git log --graph --all
 git log --oneline
 git log --oneline -10
+git log origin/master --not master
+git log --stat origin/master --not master
+git lol 
+git lol --all 
+
+git diff --staged   (show diff of what staged)
+
+git branch
+git branch -a (list both remote-tracking branches and local branches)
+git branch -v
+git branch -a -v 
+
+git branch --merged (show the branches that are already merged)
+git branch ticket-branch <commit-number>   (created branch based of this commit)
+
+gitk
+gitk --all
 git remote add origin git@github.com:dvsuresh/projectn.git
 git push -u origin master
+
+git blame file-name
+git blame -C file-name
+# git bisect
 
 # Creating a Heroku Remote
 git remote -v
