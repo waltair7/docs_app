@@ -21,7 +21,7 @@ heroku run rake db:migrate    --app ms2-sandbox
 heroku run ls db/migrate      --app ms2-prod
 heroku run cat app/models/cmsasset.rb --app ms2-sandbox
 
-heroku logs --tail            --app ms2-staging
+heroku logs --tail            --app ms2-staging      (-t can be used instead of --tail)
 heroku logs -n 1000           --app ms2-prod
 heroku logs                   --app ms2-sandbox | grep 'UPDATE'
 heroku logs --tail            --app ms2-sandbox | grep 'UPDATE "contexts"'
@@ -51,8 +51,9 @@ git log --oneline
 git log --oneline -10
 git log origin/master --not master
 git log --stat origin/master --not master
-git lol 
+git lol               (log --pretty=oneline --abbrev-commit --graph --decorate)
 git lol --all 
+git config alias.lol  (to display the alias)
 
 git diff --staged   (show diff of what staged)
 
